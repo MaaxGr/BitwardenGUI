@@ -1,0 +1,187 @@
+[
+  {
+    "object": "folder",
+    "id": "2dacfd6c-21fc-4289-83ba-aaa500c10e69",
+    "name": "Comto"
+  },
+  {
+    "object": "folder",
+    "id": "56cdbe75-9d1a-4790-bf5c-aaa500c10e69",
+    "name": "Gaming"
+  },
+  {
+    "object": "folder",
+    "id": "861b21f9-163f-4190-9a3b-aaa500c10e69",
+    "name": "Gaming/Minecraft"
+  },
+  {
+    "object": "folder",
+    "id": "5a5872d9-5a31-4111-aca7-aaa500c10e69",
+    "name": "Güttler"
+  },
+  {
+    "object": "folder",
+    "id": "a9c9afc0-87a0-46f0-876f-aaa500c10e69",
+    "name": "Güttler/Cadis"
+  },
+  {
+    "object": "folder",
+    "id": "a9cdee96-1cb2-4454-b647-aaa500c10e69",
+    "name": "Güttler/Intranet"
+  },
+  {
+    "object": "folder",
+    "id": "7f527e59-e68e-4c65-a5ca-aaa500c10e69",
+    "name": "Güttler/Intranet Old"
+  },
+  {
+    "object": "folder",
+    "id": "e7d74722-52c8-4766-af8f-aaa500c10e69",
+    "name": "Güttler/Intranet Old/Gitlab"
+  },
+  {
+    "object": "folder",
+    "id": "c80bf894-368e-4136-a7ec-aaa500c10e69",
+    "name": "Güttler/Kooperationen"
+  },
+  {
+    "object": "folder",
+    "id": "f9bb0091-9e58-4c8d-97a7-aaa500c10e69",
+    "name": "Güttler/LBase"
+  },
+  {
+    "object": "folder",
+    "id": "374c191b-acfe-4d83-8f13-aaa500c10e69",
+    "name": "Güttler/PC Nummern"
+  },
+  {
+    "object": "folder",
+    "id": "526dd46d-f91d-43eb-8086-aaa500c10e69",
+    "name": "Privat"
+  },
+  {
+    "object": "folder",
+    "id": "28d03d46-a258-4d08-8e30-aaa500c10e69",
+    "name": "Privat/Banking"
+  },
+  {
+    "object": "folder",
+    "id": "7a4912c3-7732-431d-861c-aaa500c10e69",
+    "name": "Privat/Coding"
+  },
+  {
+    "object": "folder",
+    "id": "dfd92a69-903a-4a84-adbc-aaa500c10e69",
+    "name": "Privat/Discord"
+  },
+  {
+    "object": "folder",
+    "id": "8b940580-5ef6-41c8-8cda-aaa500c10e69",
+    "name": "Privat/Google"
+  },
+  {
+    "object": "folder",
+    "id": "abf51aaf-62cb-4b69-9092-aaa500c10e69",
+    "name": "Privat/Hochschule"
+  },
+  {
+    "object": "folder",
+    "id": "78f2b50c-71f8-4af5-aad7-aaa500c10e69",
+    "name": "Privat/Hochschule/Mailingliste"
+  },
+  {
+    "object": "folder",
+    "id": "67a1860e-b49f-4c13-8137-aaa500c10e69",
+    "name": "Privat/Hosting"
+  },
+  {
+    "object": "folder",
+    "id": "2ea5a5a8-3cfb-47b8-b931-aaa500c10e69",
+    "name": "Privat/Online Shops"
+  },
+  {
+    "object": "folder",
+    "id": "2180e9ba-1cea-4132-a7b2-aaa500c10e69",
+    "name": "Privat/Schule"
+  },
+  {
+    "object": "folder",
+    "id": "384992e8-666d-41f1-a962-aaa500c10e69",
+    "name": "Studepp"
+  },
+  {
+    "object": "folder",
+    "id": "08dbeb6d-0cd9-4289-ab57-aaa500c10e69",
+    "name": "Timolia"
+  },
+  {
+    "object": "folder",
+    "id": "7b9b3420-0ea3-444d-8306-aaa500c10e69",
+    "name": "Timolia/Devbewerber"
+  },
+  {
+    "object": "folder",
+    "id": "620191b9-695c-4519-9d77-aaa500c10e69",
+    "name": "Timolia/Live | Managment"
+  },
+  {
+    "object": "folder",
+    "id": "02e76a8e-5ead-4d02-a033-aaa500c10e69",
+    "name": "Timolia/Redmine"
+  },
+  {
+    "object": "folder",
+    "id": "6cbf2932-eac2-416d-b6bf-aaa500c10e69",
+    "name": "Timolia/Roots"
+  },
+  {
+    "object": "folder",
+    "id": "c421a9b0-4bba-4aac-a2dd-aaa500c10e69",
+    "name": "VServer"
+  },
+  {
+    "object": "folder",
+    "id": "e30fde5f-98ce-48dc-be96-aaa500c10e69",
+    "name": "VServer/Services"
+  },
+  {
+    "object": "folder",
+    "id": "03b01937-ca50-48c2-93ad-aaa500c10e69",
+    "name": "VServer/Services/E-Mail"
+  },
+  {
+    "object": "folder",
+    "id": "348f8594-54c6-495c-920f-aaa500c10e69",
+    "name": "VServer/Services/Gitlab"
+  },
+  {
+    "object": "folder",
+    "id": "98828b14-b5ce-429d-9975-aaa500c10e69",
+    "name": "VServer/Services/MySQL"
+  },
+  {
+    "object": "folder",
+    "id": "304b73e2-e2d2-4749-bac0-aaa5010bc29c",
+    "name": "VServer/vh04.maax.gr"
+  },
+  {
+    "object": "folder",
+    "id": "852392a4-b587-4e43-a64e-aaa500c10e69",
+    "name": "VServer/VirtualBox"
+  },
+  {
+    "object": "folder",
+    "id": "ed72501c-f3cf-4c27-896c-aaa500c10e69",
+    "name": "VServer/VirtualBox/arch-dev"
+  },
+  {
+    "object": "folder",
+    "id": "0716abd4-a436-4252-a9ca-aaa500c10e69",
+    "name": "VServer/VirtualBox/arch-dev/ssh"
+  },
+  {
+    "object": "folder",
+    "id": null,
+    "name": "No Folder"
+  }
+]

@@ -1,0 +1,260 @@
+[
+  {
+    "object": "item",
+    "id": "991b70bc-63e3-404f-99d7-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "08dbeb6d-0cd9-4289-ab57-aaa500c10e69",
+    "type": 1,
+    "name": "Git",
+    "notes": "f871b5fe5a78b5eb\n028dc0424ac28b77\n524d923df111126f\n11e082ae263199ed\n963669fe2a5d49f4\n6b21082ffb8ae15b\nb51fba98ce0dc8ab\n8837eacf8dc73f1c\nf048acd42a4bfcf1\nbcc93cccbd120fcd",
+    "favorite": false,
+    "login": {
+      "uris": [
+        {
+          "match": null,
+          "uri": "http://git.timolia.de"
+        }
+      ],
+      "username": "Caelis",
+      "password": "mTQGXlSGZK9yHmfKWpKN",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.767Z"
+  },
+  {
+    "object": "item",
+    "id": "7ceaf1c3-9d3f-4848-8aab-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "5a5872d9-5a31-4111-aca7-aaa500c10e69",
+    "type": 1,
+    "name": "Git Intranet",
+    "notes": null,
+    "favorite": false,
+    "login": {
+      "username": "ssh://git@gets01.sped.local:/var/www/git/intranet",
+      "password": "6xebGVhNvjyHriJfZ4zw",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.766Z"
+  },
+  {
+    "object": "item",
+    "id": "ef4d0605-9bbe-4110-8c81-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "7a4912c3-7732-431d-861c-aaa500c10e69",
+    "type": 1,
+    "name": "github",
+    "notes": null,
+    "favorite": false,
+    "login": {
+      "uris": [
+        {
+          "match": null,
+          "uri": "http://coding@maax.gr"
+        }
+      ],
+      "username": "byCaelis",
+      "password": "13QUK8y4nZ4wzOwDkShW",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.766Z"
+  },
+  {
+    "object": "item",
+    "id": "aa353af3-0547-41c0-bf4d-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "526dd46d-f91d-43eb-8086-aaa500c10e69",
+    "type": 1,
+    "name": "Github | Access Token",
+    "notes": "F??r Sync von Gitlab zu Github",
+    "favorite": false,
+    "login": {
+      "username": null,
+      "password": "013f34116529e8ede543b890197aa678cc51ad45",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.766Z"
+  },
+  {
+    "object": "item",
+    "id": "91e38515-7acd-4fef-8424-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "5a5872d9-5a31-4111-aca7-aaa500c10e69",
+    "type": 1,
+    "name": "Gitlab",
+    "notes": null,
+    "favorite": false,
+    "login": {
+      "username": "magr",
+      "password": "50731d97c10eff55db9dec9c28e7966e",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.766Z"
+  },
+  {
+    "object": "item",
+    "id": "63e2413d-226a-41bd-84ef-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "abf51aaf-62cb-4b69-9092-aaa500c10e69",
+    "type": 1,
+    "name": "Gitlab",
+    "notes": null,
+    "favorite": false,
+    "login": {
+      "uris": [
+        {
+          "match": null,
+          "uri": "http://max.grossmann@hof-university.de"
+        }
+      ],
+      "username": "magr",
+      "password": "669eqwKivlePdAyApXA8",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.766Z"
+  },
+  {
+    "object": "item",
+    "id": "a610f4b9-a1c6-49bf-83de-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "384992e8-666d-41f1-a962-aaa500c10e69",
+    "type": 1,
+    "name": "Gitlab",
+    "notes": null,
+    "favorite": false,
+    "login": {
+      "username": "Max",
+      "password": "aTfsgfYDZqRKoU1XfvcU",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.786Z"
+  },
+  {
+    "object": "item",
+    "id": "5320c274-82c3-4037-a2e0-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "384992e8-666d-41f1-a962-aaa500c10e69",
+    "type": 1,
+    "name": "Gitlab",
+    "notes": null,
+    "favorite": false,
+    "login": {
+      "username": "root",
+      "password": "zKGyDG9FFPzbUb1rurFN",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.786Z"
+  },
+  {
+    "object": "item",
+    "id": "c4d73223-6854-4f7c-9ffe-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "08dbeb6d-0cd9-4289-ab57-aaa500c10e69",
+    "type": 1,
+    "name": "Gitlab | API Key",
+    "notes": "Name: devnet",
+    "favorite": false,
+    "login": {
+      "username": "DevnetWrapper",
+      "password": "NxeWpTP2CSFPsJsRsg8v",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.785Z"
+  },
+  {
+    "object": "item",
+    "id": "c2c2b5d2-7986-46a0-baae-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "08dbeb6d-0cd9-4289-ab57-aaa500c10e69",
+    "type": 1,
+    "name": "Gitlab API Key",
+    "notes": null,
+    "favorite": false,
+    "login": {
+      "username": "Caelis",
+      "password": "fJRYqT3uhtXDxpXGnMFY",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.767Z"
+  },
+  {
+    "object": "item",
+    "id": "a597a004-b70b-4605-a23d-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "2dacfd6c-21fc-4289-83ba-aaa500c10e69",
+    "type": 1,
+    "name": "Gitlab Jannek",
+    "notes": null,
+    "favorite": false,
+    "login": {
+      "username": "Max",
+      "password": "FduwYTnJqVOWQ5pr0qau",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.786Z"
+  },
+  {
+    "object": "item",
+    "id": "09a6204a-15d8-4069-804d-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "5a5872d9-5a31-4111-aca7-aaa500c10e69",
+    "type": 1,
+    "name": "Intranet",
+    "notes": null,
+    "favorite": false,
+    "login": {
+      "username": "git",
+      "password": "git",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.766Z"
+  },
+  {
+    "object": "item",
+    "id": "a233d6a2-a500-44f9-a5ab-aaa500c10e69",
+    "organizationId": null,
+    "folderId": "e7d74722-52c8-4766-af8f-aaa500c10e69",
+    "type": 1,
+    "name": "Login | magr",
+    "notes": null,
+    "favorite": false,
+    "login": {
+      "uris": [
+        {
+          "match": null,
+          "uri": "http://gitlab.sped.local:180"
+        }
+      ],
+      "username": "magr",
+      "password": "fsfghwrfjiwt802785djklc19djfhyhnj",
+      "totp": null,
+      "passwordRevisionDate": null
+    },
+    "collectionIds": [],
+    "revisionDate": "2019-08-10T11:42:53.767Z"
+  }
+]
