@@ -2,6 +2,7 @@ package de.maaxgr.passwordmanager.scenes
 
 import de.maaxgr.passwordmanager.BitwardenRepository
 import de.maaxgr.passwordmanager.entity.BitwardenItem
+import javafx.beans.property.SimpleStringProperty
 import javafx.collections.FXCollections
 import javafx.event.EventHandler
 import javafx.scene.Node
@@ -11,11 +12,9 @@ import javafx.scene.control.MenuItem
 import javafx.scene.control.TableColumn
 import javafx.scene.control.TableView
 import javafx.scene.control.cell.PropertyValueFactory
-import javafx.scene.input.KeyCombination
-import javafx.scene.input.KeyEvent
-import javafx.scene.input.MouseButton
-import javafx.scene.input.MouseEvent
+import javafx.scene.input.*
 import javafx.scene.layout.BorderPane
+import javafx.util.Callback
 import java.awt.MouseInfo
 
 class PasswordTableViewScene(private val repository: BitwardenRepository) {
@@ -39,11 +38,21 @@ class PasswordTableViewScene(private val repository: BitwardenRepository) {
         val tableView = TableView<BitwardenItem>()
 
         //init columns
+        val colNamespace = TableColumn<BitwardenItem, String>("Namespace")
+        colNamespace.cellValueFactory = Callback { p ->
+            SimpleStringProperty(repository.getFolderById(p.value.folderId ?: "").name)
+        }
+
         val colName = TableColumn<BitwardenItem, String>("Name")
         colName.cellValueFactory = PropertyValueFactory("name")
 
+        val colUsername = TableColumn<BitwardenItem, String>("Username")
+        colUsername.cellValueFactory = Callback { p ->
+            SimpleStringProperty(p.value.login.username)
+        }
+
         //add columns to table view
-        tableView.columns.addAll(colName)
+        tableView.columns.addAll(colNamespace, colName, colUsername)
 
         //on table view entry klicked
         tableView.addEventHandler(MouseEvent.MOUSE_CLICKED) {
@@ -57,12 +66,14 @@ class PasswordTableViewScene(private val repository: BitwardenRepository) {
         }
 
         tableView.addEventHandler(KeyEvent.KEY_PRESSED) {
-            val comb = KeyCombination.keyCombination("Ctrl+C")
+            val bwItem = tableView.selectionModel.selectedItem
+            val copyNameComb = KeyCombination.keyCombination("Ctrl+B")
+            val copyPWComb = KeyCombination.keyCombination("Ctrl+C")
 
-            if (comb.match(it)) {
-                val bwItem = tableView.selectionModel.selectedItem
-                println("Copy: " + bwItem.name)
-
+            if (copyNameComb.match(it)) {
+                putInClipboard(bwItem.login.username)
+            } else if (copyPWComb.match(it)) {
+                putInClipboard(bwItem.login.password)
             }
         }
 
@@ -73,25 +84,36 @@ class PasswordTableViewScene(private val repository: BitwardenRepository) {
 
     private fun showContextMenu(tableView: TableView<BitwardenItem>, sceneX: Double, sceneY: Double) {
         val cm = ContextMenu()
-        cm.isAutoHide = true
+        val bwItem = tableView.selectionModel.selectedItem
 
-        val mi = MenuItem("Username kopieren")
-        mi.accelerator = KeyCombination.keyCombination("Ctrl+C")
-        mi.onAction = EventHandler {
-            println("copy")
+        val copyUsernameMI = MenuItem("Username kopieren")
+        copyUsernameMI.accelerator = KeyCombination.keyCombination("Ctrl+B")
+        copyUsernameMI.onAction = EventHandler {
+            putInClipboard(bwItem.login.username)
         }
 
 
-        val mii = MenuItem("Menu 2")
-        cm.items.addAll(mi, mii)
+        val copyPasswordMI = MenuItem("Passwort koplieren")
+        copyPasswordMI.accelerator = KeyCombination.keyCombination("Ctrl+C")
+        copyPasswordMI.onAction = EventHandler {
+            putInClipboard(bwItem.login.password)
+        }
 
-        val bwItem = tableView.selectionModel.selectedItem
+        cm.items.addAll(copyUsernameMI, copyPasswordMI)
         println(bwItem.name)
 
         cm.show(tableView, sceneX, sceneY)
 
         activeContextMenu?.hide();
         activeContextMenu = cm
+    }
+
+    private fun putInClipboard(string: String) {
+        val clipboard = Clipboard.getSystemClipboard()
+        val content = ClipboardContent()
+        content.putString(string)
+
+        clipboard.setContent(content)
     }
 
 }

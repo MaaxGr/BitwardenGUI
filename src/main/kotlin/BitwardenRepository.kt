@@ -8,7 +8,7 @@ class BitwardenRepository(private val provider: BitwardenPasswordProvider) {
     private val passwords: List<BitwardenItem> = provider.loadAllPasswords()
     private val folders: List<BitwardenFolder> = provider.loadFolders()
 
-    public fun getFiltered(filter: String): List<BitwardenItem> {
+    fun getFiltered(filter: String): List<BitwardenItem> {
         if (filter.isEmpty()) {
             return passwords
         }
@@ -35,8 +35,8 @@ class BitwardenRepository(private val provider: BitwardenPasswordProvider) {
         return matchingPasswords
     }
 
-    private fun getFolderById(hash: String): BitwardenFolder {
-        return folders.first { it.id == hash }
+    fun getFolderById(hash: String): BitwardenFolder {
+        return folders.firstOrNull() { it.id == hash } ?: BitwardenFolder("", "")
     }
 
 }
