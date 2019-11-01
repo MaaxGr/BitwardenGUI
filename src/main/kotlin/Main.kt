@@ -1,5 +1,7 @@
 package de.maaxgr.passwordmanager
 
+import de.maaxgr.passwordmanager.scenes.PasswordTableViewScene
+import de.maaxgr.passwordmanager.util.PropertiesReader
 import javafx.application.Application
 import javafx.beans.binding.Bindings
 import javafx.collections.FXCollections
@@ -22,17 +24,20 @@ class Main : Application() {
 
     lateinit var repository: BitwardenRepository
     lateinit var listView: ListView<String>
+    lateinit var properties: PropertiesReader
 
     override fun start(primaryStage: Stage) {
+        properties = PropertiesReader("settings.properties")
 
-        val passwordProvider = BitwardenPasswordProvider()
+        val passwordProvider = BitwardenPasswordProvider(properties.getString("bitwarden.session"))
         repository = BitwardenRepository(passwordProvider)
 
         val layout = BorderPane()
         layout.center = createListView()
 
 
-        val scene = Scene(layout, 900.0, 450.0)
+        //val scene = Scene(layout, 900.0, 450.0)
+        val scene = PasswordTableViewScene(repository).scene
 
         primaryStage.scene = scene
         primaryStage.title = "Passwort Manager"
@@ -48,7 +53,7 @@ class Main : Application() {
     }
 
     private fun createListView(): ListView<String> {
-        listView = ListView<String>()
+        listView = ListView()
 
         /*
         val folders = passwordProvider.loadFolders()
@@ -102,9 +107,7 @@ class Main : Application() {
             listView.setCellFactory { lv ->
 
                 val cell = ListCell<String>()
-
-
-
+                //println(listView.items.indexOf())
 
                 val contextMenu = ContextMenu()
 

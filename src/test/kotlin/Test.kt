@@ -7,7 +7,7 @@ class Test {
 
     @Test
     fun test() {
-        val provider = BitwardenPasswordProvider()
+        val provider = BitwardenPasswordProvider("")
         //val passwords = provider.loadPasswords()
 
         //println(passwords.size)
