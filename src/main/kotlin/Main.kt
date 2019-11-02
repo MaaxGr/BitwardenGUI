@@ -38,6 +38,8 @@ class Main : Application() {
     override fun start(primaryStage: Stage) {
         properties = PropertiesReader("settings.properties")
 
+        println("PW: " + properties.getString("bitwarden.session"))
+
         val passwordProvider = BitwardenPasswordProvider(properties.getString("bitwarden.session"))
         repository = BitwardenRepository(passwordProvider)
 

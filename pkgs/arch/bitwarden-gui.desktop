@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=bitwarden-gui
+#Categories=Game;
+Comment=Alternative Bitwarden GUI
+Icon=/usr/share/bitwarden-gui/bitwarden-gui.png
+Name=Bitwarden GUI

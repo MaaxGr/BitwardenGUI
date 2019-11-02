@@ -1,1 +1,1 @@
-exec /usr/bin/java -jar '/usr/share/java/bitwarden-gui/bitwarden-gui.jar' "$@"
+cd /usr/share/java/bitwarden-gui/ && /usr/bin/java -jar bitwarden-gui.jar

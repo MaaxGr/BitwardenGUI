@@ -6,14 +6,18 @@ pkgdesc="Alternative Bitwarden GUI"
 arch=('i686' 'x86_64')
 url="https://github.com/MaaxGr/BitwardenGUI"
 license=('GPL3')
-depends=('java-runtime=8')
+depends=('java-runtime=8', 'bitwarden-cli')
 source=(
 "https://raw.githubusercontent.com/MaaxGr/BitwardenGUI/master/pkgs/arch/bitwarden-gui.jar"
 "https://raw.githubusercontent.com/MaaxGr/BitwardenGUI/master/pkgs/arch/bitwarden-gui"
+"https://raw.githubusercontent.com/MaaxGr/BitwardenGUI/master/pkgs/arch/bitwarden-gui.desktop"
+"https://raw.githubusercontent.com/MaaxGr/BitwardenGUI/master/pkgs/arch/bitwarden-gui.png"
 )
 md5sums=(
-'e5869dd3fbf20309e9cdf24071f36b5c'
-'bba66a38fd3e36eff8f32960c29b5456'
+'431b46d33bac08cdc429515f36707279'
+'db49109c9d53318c680197243d38ccc5'
+'44762ba8597e7e608e37796347a80da2'
+'f62cba2ce400aa491f47aa92c4bf64e5'
 )
 
 package() {
@@ -21,4 +25,8 @@ package() {
  	 "$pkgdir"/usr/share/java/bitwarden-gui/bitwarden-gui.jar
 	install -D -m 755 bitwarden-gui \
  	 "$pkgdir"/usr/bin/bitwarden-gui
+ 	install -D -m 755 bitwarden-gui.desktop \
+     "$pkgdir"/usr/bin/bitwarden-desktop
+    install -D -m 755 bitwarden-gui.png \
+     "$pkgdir"/usr/share/bitwarden-gui/bitwarden-gui.png
 }

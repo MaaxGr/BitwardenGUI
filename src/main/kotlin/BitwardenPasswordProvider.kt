@@ -29,6 +29,8 @@ class BitwardenPasswordProvider(private val session: String) {
     fun loadAllPasswords(): List<BitwardenItem> {
         val result = CommandLineExecutor.run("bw list items --session $session")
 
+        println(result)
+
         val listWithType = object : TypeToken<List<BitwardenItem>>() {}.type
         val items = Gson().fromJson<List<BitwardenItem>>(result, listWithType)
 
