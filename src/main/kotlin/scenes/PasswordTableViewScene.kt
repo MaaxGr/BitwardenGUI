@@ -14,6 +14,9 @@ import javafx.scene.control.cell.PropertyValueFactory
 import javafx.scene.input.*
 import javafx.scene.layout.BorderPane
 import javafx.util.Callback
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.awt.MouseInfo
 
 class PasswordTableViewScene(private val repository: BitwardenRepository) {
@@ -118,7 +121,7 @@ class PasswordTableViewScene(private val repository: BitwardenRepository) {
     private fun openSearchModal() {
         Platform.runLater {
             val alert = TextInputDialog()
-            alert.isResizable = true
+            alert.disableResizing()
             alert.title = "Suche"
             alert.contentText = "Suchwort:"
             val result = alert.showAndWait()
@@ -135,6 +138,19 @@ class PasswordTableViewScene(private val repository: BitwardenRepository) {
         content.putString(string)
 
         clipboard.setContent(content)
+    }
+
+    fun <T> Dialog<T>.disableResizing() {
+        isResizable = true
+        onShown = EventHandler {
+            GlobalScope.launch {
+                delay(1)
+
+                Platform.runLater {
+                    isResizable = false
+                }
+            }
+        }
     }
 
 }

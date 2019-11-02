@@ -1,0 +1,24 @@
+# Maintainer: maaxgr <dev@maax.gr>
+pkgname=('bitwarden-gui')
+pkgver=1.0.1
+pkgrel=1
+pkgdesc="Alternative Bitwarden GUI"
+arch=('i686' 'x86_64')
+url="https://github.com/MaaxGr/BitwardenGUI"
+license=('GPL3')
+depends=('java-runtime=8')
+source=(
+"https://raw.githubusercontent.com/MaaxGr/BitwardenGUI/master/pkgs/arch/bitwarden-gui.jar"
+"https://raw.githubusercontent.com/MaaxGr/BitwardenGUI/master/pkgs/arch/bitwarden-gui"
+)
+md5sums=(
+'e5869dd3fbf20309e9cdf24071f36b5c'
+'bba66a38fd3e36eff8f32960c29b5456'
+)
+
+package() {
+	install -D -m 755 bitwarden-gui.jar \
+ 	 "$pkgdir"/usr/share/java/bitwarden-gui/bitwarden-gui.jar
+	install -D -m 755 bitwarden-gui \
+ 	 "$pkgdir"/usr/bin/bitwarden-gui
+}
