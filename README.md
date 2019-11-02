@@ -4,13 +4,14 @@ Simple alternative Bitwarden Interface.
 If you have questions or suggestions, please feel free to open 
 a issue or write a mail to dev@maax.gr 
 
-##Supported features
+## Supported features
 * List all password entries
 * Search for password entry with `Ctrl+F`
 * Copy username with `Ctrl+B` on selected entry
 * Copy password with `Ctrl+C` on selected entry
 
-##Screenshots
+## Screenshots
+
 | Description | Image | 
 | ------------- | ------------- | 
 | List of password entries  | ![list](./screenshots/list.png) |
