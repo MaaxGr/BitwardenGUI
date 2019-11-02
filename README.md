@@ -11,10 +11,10 @@ a issue or write a mail to dev@maax.gr
 * Copy password with `Ctrl+C` on selected entry
 
 ##Screenshots
-| Description        | Image           | 
-| ------------- |:-------------:| 
+| Description | Image | 
+| ------------- | ------------- | 
 | List of password entries  | ![list](./screenshots/list.png) |
-| Search for a password entry | !![search](./screenshots/search.png) |
+| Search for a password entry | ![search](./screenshots/search.png) |
 
 # Dependencies
 * Arch Linux
