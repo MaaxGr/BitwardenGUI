@@ -1,1 +1,2 @@
+#!/bin/bash
 cd /usr/share/java/bitwarden-gui/ && /usr/bin/java -jar bitwarden-gui.jar
