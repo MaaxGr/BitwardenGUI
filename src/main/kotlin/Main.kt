@@ -1,8 +1,10 @@
 package de.maaxgr.passwordmanager
 
+import com.sun.javafx.application.LauncherImpl
 import de.maaxgr.passwordmanager.scenes.PasswordTableViewScene
 import de.maaxgr.passwordmanager.util.PropertiesReader
 import javafx.application.Application
+import javafx.application.Preloader
 import javafx.beans.binding.Bindings
 import javafx.collections.FXCollections
 import javafx.scene.Scene
@@ -17,7 +19,14 @@ import javafx.stage.Stage
 
 
 fun main(args: Array<String>) {
-    Application.launch(Main::class.java, *args)
+    LauncherImpl.launchApplication(Main::class.java, MainPreloader::class.java, args)
+}
+
+class MainPreloader : Preloader() {
+    override fun start(p0: Stage?) {
+        com.sun.glass.ui.Application.GetApplication().name = "Test"
+        println("Test")
+    }
 }
 
 class Main : Application() {
@@ -32,110 +41,12 @@ class Main : Application() {
         val passwordProvider = BitwardenPasswordProvider(properties.getString("bitwarden.session"))
         repository = BitwardenRepository(passwordProvider)
 
-        val layout = BorderPane()
-        layout.center = createListView()
-
-
-        //val scene = Scene(layout, 900.0, 450.0)
         val scene = PasswordTableViewScene(repository).scene
 
         primaryStage.scene = scene
         primaryStage.title = "Passwort Manager"
         primaryStage.show()
-
-        registerSearch(scene)
     }
 
-    private fun createTableView() {
-        //tableView = TableView()
-
-
-    }
-
-    private fun createListView(): ListView<String> {
-        listView = ListView()
-
-        /*
-        val folders = passwordProvider.loadFolders()
-
-        val arrayList = mutableListOf<String>()
-
-        folders.forEach {
-            arrayList.addAll(
-                    passwordProvider.loadPasswords(it).map { it.name }
-            )
-        }
-         */
-
-        val arrayList = repository.getFiltered("").map { it.name }
-
-        val items = FXCollections.observableArrayList(
-                arrayList)
-        listView.items = items
-
-        return listView
-    }
-
-    private fun registerSearch(scene: Scene) {
-        scene.addEventFilter(KeyEvent.KEY_PRESSED) {
-            val combination = KeyCodeCombination(KeyCode.F, KeyCombination.CONTROL_ANY)
-
-            if (combination.match(it)) {
-                openSearchModal()
-                println("Search pressed")
-            }
-
-        }
-    }
-
-    private fun openSearchModal() {
-        val alert = TextInputDialog()
-        alert.title = "Suche"
-        alert.contentText = "Suchwort:"
-        val result = alert.showAndWait()
-
-        result.ifPresent {
-            listView.items.clear()
-
-
-            val arrayList = repository.getFiltered(it).map { item -> item.name }
-
-            val items = FXCollections.observableArrayList(arrayList)
-
-            listView.items = items
-
-            listView.setCellFactory { lv ->
-
-                val cell = ListCell<String>()
-                //println(listView.items.indexOf())
-
-                val contextMenu = ContextMenu()
-
-                val editItem = MenuItem()
-                editItem.textProperty().bind(Bindings.format("Edit \"%s\"", cell.itemProperty()))
-                editItem.setOnAction({ event ->
-                    val item = cell.getItem()
-                    // code to edit item...
-                })
-                val deleteItem = MenuItem()
-                deleteItem.textProperty().bind(Bindings.format("Delete \"%s\"", cell.itemProperty()))
-                deleteItem.setOnAction({ event -> listView.items.remove(cell.getItem()) })
-                contextMenu.getItems().addAll(editItem, deleteItem)
-
-                cell.textProperty().bind(cell.itemProperty())
-
-                cell.emptyProperty().addListener({ obs, wasEmpty, isNowEmpty ->
-                    if (isNowEmpty) {
-                        cell.setContextMenu(null)
-                    } else {
-                        cell.setContextMenu(contextMenu)
-                    }
-                })
-                cell
-            }
-
-        }
-
-    }
 
 }

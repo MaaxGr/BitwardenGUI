@@ -2,15 +2,14 @@ package de.maaxgr.passwordmanager.scenes
 
 import de.maaxgr.passwordmanager.BitwardenRepository
 import de.maaxgr.passwordmanager.entity.BitwardenItem
+import javafx.application.Platform
+import javafx.beans.binding.Bindings
 import javafx.beans.property.SimpleStringProperty
 import javafx.collections.FXCollections
 import javafx.event.EventHandler
 import javafx.scene.Node
 import javafx.scene.Scene
-import javafx.scene.control.ContextMenu
-import javafx.scene.control.MenuItem
-import javafx.scene.control.TableColumn
-import javafx.scene.control.TableView
+import javafx.scene.control.*
 import javafx.scene.control.cell.PropertyValueFactory
 import javafx.scene.input.*
 import javafx.scene.layout.BorderPane
@@ -20,22 +19,24 @@ import java.awt.MouseInfo
 class PasswordTableViewScene(private val repository: BitwardenRepository) {
 
     val scene: Scene
+    lateinit var tableView: TableView<BitwardenItem>
     var activeContextMenu: ContextMenu? = null
 
     init {
         val borderPane = BorderPane()
-        borderPane.center = createCenterView()
+
+        createTableView()
+
+        borderPane.center = tableView
 
 
         scene = Scene(borderPane, 900.0, 450.0)
+
+        registerSearch(scene)
     }
 
-    private fun createCenterView(): Node {
-        return createTableView()
-    }
-
-    private fun createTableView(): TableView<BitwardenItem> {
-        val tableView = TableView<BitwardenItem>()
+    private fun createTableView() {
+        tableView = TableView()
 
         //init columns
         val colNamespace = TableColumn<BitwardenItem, String>("Namespace")
@@ -78,8 +79,6 @@ class PasswordTableViewScene(private val repository: BitwardenRepository) {
         }
 
         tableView.items = FXCollections.observableList(repository.getFiltered(""))
-
-        return tableView
     }
 
     private fun showContextMenu(tableView: TableView<BitwardenItem>, sceneX: Double, sceneY: Double) {
@@ -92,7 +91,6 @@ class PasswordTableViewScene(private val repository: BitwardenRepository) {
             putInClipboard(bwItem.login.username)
         }
 
-
         val copyPasswordMI = MenuItem("Passwort koplieren")
         copyPasswordMI.accelerator = KeyCombination.keyCombination("Ctrl+C")
         copyPasswordMI.onAction = EventHandler {
@@ -100,12 +98,35 @@ class PasswordTableViewScene(private val repository: BitwardenRepository) {
         }
 
         cm.items.addAll(copyUsernameMI, copyPasswordMI)
-        println(bwItem.name)
 
         cm.show(tableView, sceneX, sceneY)
 
         activeContextMenu?.hide();
         activeContextMenu = cm
+    }
+
+    private fun registerSearch(scene: Scene) {
+        scene.addEventFilter(KeyEvent.KEY_PRESSED) {
+            val combination = KeyCodeCombination.keyCombination("Ctrl+F")
+            if (combination.match(it)) {
+                openSearchModal()
+            }
+
+        }
+    }
+
+    private fun openSearchModal() {
+        Platform.runLater {
+            val alert = TextInputDialog()
+            alert.isResizable = true
+            alert.title = "Suche"
+            alert.contentText = "Suchwort:"
+            val result = alert.showAndWait()
+
+            result.ifPresent {
+                tableView.items = FXCollections.observableList(repository.getFiltered(it))
+            }
+        }
     }
 
     private fun putInClipboard(string: String) {

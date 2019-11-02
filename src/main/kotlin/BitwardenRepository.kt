@@ -16,14 +16,13 @@ class BitwardenRepository(private val provider: BitwardenPasswordProvider) {
         val matchingPasswords = mutableListOf<BitwardenItem>()
 
         for (password in passwords) {
-
             if (password.name.contains(filter, true)) {
                 if (!matchingPasswords.contains(password)) {
                     matchingPasswords.add(password)
                 }
             }
 
-            val folder = getFolderById(password.folderId)
+            val folder = getFolderById(password.folderId ?: "")
 
             if (folder.name.contains(filter, true)) {
                 if (!matchingPasswords.contains(password)) {
