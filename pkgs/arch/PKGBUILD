@@ -7,7 +7,7 @@ arch=('i686' 'x86_64')
 url="https://github.com/MaaxGr/BitwardenGUI"
 license=('GPL3')
 depends=(
-'java-runtime=8'
+'java-runtime'
 'bitwarden-cli'
 )
 source=(
@@ -18,7 +18,7 @@ source=(
 )
 md5sums=(
 '431b46d33bac08cdc429515f36707279'
-'db49109c9d53318c680197243d38ccc5'
+'d301f379ef0da6be2119e763d1236afb'
 '607e258bbe3780773396d1b4ab55d3c5'
 'f62cba2ce400aa491f47aa92c4bf64e5'
 )
